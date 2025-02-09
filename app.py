@@ -51,8 +51,7 @@ webrtc_streamer(
     video_frame_callback=process_frame,
     media_stream_constraints={"video": True, "audio": False},
     async_processing=True,
-    rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
-    force_relay=True  # ✅ Fixes WebRTC connection issues
+    rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]} # ✅ Fixes WebRTC connection issues
 )
 
 
