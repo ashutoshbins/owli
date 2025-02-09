@@ -50,7 +50,10 @@ webrtc_streamer(
     mode=WebRtcMode.SENDRECV,
     video_frame_callback=process_frame,
     media_stream_constraints={"video": True, "audio": False},
-    async_processing=True,  # ✅ Fixes instant closing issue
+    async_processing=True,
+    rtc_configuration={"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]},
+    force_relay=True  # ✅ Fixes WebRTC connection issues
 )
+
 
 
